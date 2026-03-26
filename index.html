@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExamAI - AI-Powered Exam Preparation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                <span class="brand-name">ExamAI</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn active" data-page="home">Home</button>
+                <button class="nav-btn" data-page="dashboard">Dashboard</button>
+                <button class="nav-btn" data-page="questions">Questions</button>
+                <button class="nav-btn" data-page="practice">Practice</button>
+                <button class="nav-btn" data-page="analytics">Analytics</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+        <div class="hero">
+            <div class="hero-content">
+                <svg class="hero-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                <h1 class="hero-title">AI-Powered Exam Preparation</h1>
+                <p class="hero-subtitle">
+                    Master competitive exams with intelligent question generation based on frequency analysis 
+                    and skill sets from years of previous papers. Study smarter, not harder.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="navigateTo('dashboard')">Get Started</button>
+                    <button class="btn btn-outline" onclick="navigateTo('questions')">Browse Questions</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2 class="section-title">How ExamAI Works</h2>
+            <p class="section-subtitle">Leverage AI to analyze patterns and optimize your preparation</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    </svg>
+                    <h3>Paper Analysis</h3>
+                    <p>Analyze thousands of previous year papers from competitive exams</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                    <h3>Frequency Tracking</h3>
+                    <p>Identify questions that repeat frequently across years</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                    <h3>Skill-Based Learning</h3>
+                    <p>Questions organized by skill sets for targeted practice</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                    <h3>AI Generation</h3>
+                    <p>Smart question generation based on patterns and trends</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-number">4,320+</div>
+                    <div class="stat-label">Questions Analyzed</div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Papers Analyzed</div>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Skill Categories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Page -->
+    <section id="dashboard" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <p>Track your progress and analyze exam patterns</p>
+            </div>
+
+            <div class="stats-overview">
+                <div class="stat-box">
+                    <div class="stat-icon blue">📚</div>
+                    <div class="stat-content">
+                        <div class="stat-value">48</div>
+                        <div class="stat-text">Papers Analyzed</div>
+                        <div class="stat-detail">From 2020 - 2025</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon green">🎯</div>
+                    <div class="stat-content">
+                        <div class="stat-value">4,320</div>
+                        <div class="stat-text">Total Questions</div>
+                        <div class="stat-detail">Across all skill sets</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon orange">🔥</div>
+                    <div class="stat-content">
+                        <div class="stat-value">12 days</div>
+                        <div class="stat-text">Study Streak</div>
+                        <div class="stat-detail">Keep it up!</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon purple">🏆</div>
+                    <div class="stat-content">
+                        <div class="stat-value">78%</div>
+                        <div class="stat-text">Accuracy</div>
+                        <div class="stat-detail">+5% from last week</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="chart-card large">
+                    <h3>Questions by Skill Set</h3>
+                    <p class="card-subtitle">Distribution of analyzed questions across different topics</p>
+                    <canvas id="skillDistributionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>Study Recommendations</h3>
+                <div class="recommendation-grid">
+                    <div class="recommendation-card green">
+                        <div class="rec-icon">📈</div>
+                        <h4>Focus on High-Frequency Topics</h4>
+                        <p>Calculus and Physical Chemistry have the highest repetition rates. Prioritize these for maximum impact.</p>
+                    </div>
+                    <div class="recommendation-card blue">
+                        <div class="rec-icon">🎯</div>
+                        <h4>Strengthen Weak Areas</h4>
+                        <p>Your accuracy in Optics is 65%. Practice more questions from this skill set.</p>
+                    </div>
+                    <div class="recommendation-card purple">
+                        <div class="rec-icon">⏱️</div>
+                        <h4>Time Management Practice</h4>
+                        <p>Try solving 30 questions in 60 minutes to simulate exam conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Questions Page -->
+    <section id="questions" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Question Bank</h1>
+                <p><span id="questionCount">12</span> questions available • Filtered by frequency and skill set</p>
+            </div>
+
+            <div class="questions-layout">
+                <aside class="filters-sidebar">
+                    <h3>Filters</h3>
+                    
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" id="searchInput" placeholder="Search questions..." class="filter-input">
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Difficulty</label>
+                        <select id="difficultyFilter" class="filter-select">
+                            <option value="all">All Levels</option>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Minimum Frequency</label>
+                        <select id="frequencyFilter" class="filter-select">
+                            <option value="0">All</option>
+                            <option value="5">5+ times</option>
+                            <option value="8">8+ times</option>
+                            <option value="10">10+ times</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Skill Sets</label>
+                        <div id="skillFilters" class="checkbox-group"></div>
+                    </div>
+
+                    <button class="btn btn-outline btn-block" onclick="clearFilters()">Clear Filters</button>
+                </aside>
+
+                <div class="questions-list" id="questionsList">
+                    <!-- Questions will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Page -->
+    <section id="practice" class="page">
+        <div class="container">
+            <div id="practiceStart" class="practice-start">
+                <div class="practice-card">
+                    <div class="practice-icon">▶️</div>
+                    <h1>Practice Mode</h1>
+                    <p class="practice-subtitle">Test your knowledge with 10 AI-selected questions</p>
+                    
+                    <div class="practice-features">
+                        <div class="practice-feature">
+                            <h4>10 Questions</h4>
+                            <p>Covering multiple skill sets</p>
+                        </div>
+                        <div class="practice-feature">
+                            <h4>Instant Feedback</h4>
+                            <p>See correct answers immediately</p>
+                        </div>
+                        <div class="practice-feature">
+                            <h4>Track Progress</h4>
+                            <p>Monitor your performance</p>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-large" onclick="startPractice()">Start Practice</button>
+                </div>
+            </div>
+
+            <div id="practiceActive" class="practice-active" style="display: none;">
+                <div class="practice-header">
+                    <div class="practice-info">
+                        <span id="questionProgress">Question 1 of 10</span>
+                        <span class="timer">⏱️ <span id="timer">0:00</span></span>
+                    </div>
+                    <div class="practice-stats">
+                        <span id="practiceScore">0 correct • 0 incorrect</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-badges">
+                        <span class="badge" id="currentSkill">Algebra</span>
+                        <span class="badge" id="currentDifficulty">Medium</span>
+                        <span class="badge frequency" id="currentFrequency">8x</span>
+                    </div>
+                    <h2 id="currentQuestion">Question will appear here</h2>
+                    
+                    <div class="options-list" id="optionsList">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+
+                    <div id="explanation" class="explanation" style="display: none;">
+                        <h4>Explanation</h4>
+                        <p id="explanationText"></p>
+                    </div>
+
+                    <button id="submitBtn" class="btn btn-primary btn-block" onclick="submitAnswer()">Submit Answer</button>
+                </div>
+            </div>
+
+            <div id="practiceResults" class="practice-results" style="display: none;">
+                <div class="results-card">
+                    <div class="results-icon">🏆</div>
+                    <h1>Practice Complete!</h1>
+                    <p class="results-subtitle">Here's how you performed</p>
+                    
+                    <div class="results-stats">
+                        <div class="result-stat green">
+                            <div class="result-value" id="finalCorrect">0/10</div>
+                            <div class="result-label">Correct Answers</div>
+                        </div>
+                        <div class="result-stat blue">
+                            <div class="result-value" id="finalAccuracy">0%</div>
+                            <div class="result-label">Accuracy</div>
+                        </div>
+                        <div class="result-stat purple">
+                            <div class="result-value" id="finalTime">0:00</div>
+                            <div class="result-label">Time Taken</div>
+                        </div>
+                    </div>
+
+                    <div class="results-review" id="resultsReview">
+                        <!-- Results will be populated by JavaScript -->
+                    </div>
+
+                    <div class="results-actions">
+                        <button class="btn btn-primary" onclick="startPractice()">Try Again</button>
+                        <button class="btn btn-outline" onclick="resetPractice()">Back to Start</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analytics Page -->
+    <section id="analytics" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Analytics & Insights</h1>
+                <p>Detailed analysis of question patterns and your performance</p>
+            </div>
+
+            <div class="stats-overview">
+                <div class="stat-box">
+                    <div class="stat-icon blue">🎯</div>
+                    <div class="stat-content">
+                        <div class="stat-value">428</div>
+                        <div class="stat-text">Total Practiced</div>
+                        <div class="stat-detail">Questions attempted</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon green">🏆</div>
+                    <div class="stat-content">
+                        <div class="stat-value">78%</div>
+                        <div class="stat-text">Overall Accuracy</div>
+                        <div class="stat-detail">+5% from last month</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon purple">⏱️</div>
+                    <div class="stat-content">
+                        <div class="stat-value">2:15</div>
+                        <div class="stat-text">Avg. Time/Question</div>
+                        <div class="stat-detail">Minutes per question</div>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon orange">📈</div>
+                    <div class="stat-content">
+                        <div class="stat-value">7/11</div>
+                        <div class="stat-text">Strong Skills</div>
+                        <div class="stat-detail">Above 75% accuracy</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics-tabs">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('performance')">Performance Trends</button>
+                    <button class="tab-btn" onclick="switchTab('skills')">Skill Analysis</button>
+                    <button class="tab-btn" onclick="switchTab('frequency')">Frequency Insights</button>
+                </div>
+
+                <div id="performanceTab" class="tab-content active">
+                    <div class="chart-card">
+                        <h3>Accuracy Progress Over Time</h3>
+                        <p class="card-subtitle">Track your improvement month by month</p>
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+
+                <div id="skillsTab" class="tab-content">
+                    <div class="chart-card">
+                        <h3>Accuracy by Skill Set</h3>
+                        <p class="card-subtitle">Your performance across different topics</p>
+                        <canvas id="skillAccuracyChart"></canvas>
+                    </div>
+                </div>
+
+                <div id="frequencyTab" class="tab-content">
+                    <div class="chart-card">
+                        <h3>Question Frequency Distribution</h3>
+                        <p class="card-subtitle">How often questions appear in previous year papers</p>
+                        <canvas id="frequencyChart"></canvas>
+                    </div>
+
+                    <div class="insights-grid">
+                        <div class="insight-card green">
+                            <h4>Priority Topics</h4>
+                            <p>34% of questions appear 10+ times. Focus on these for maximum impact on your score.</p>
+                        </div>
+                        <div class="insight-card blue">
+                            <h4>Core Concepts</h4>
+                            <p>Questions with 7-9 appearances (23%) represent core concepts that regularly appear.</p>
+                        </div>
+                        <div class="insight-card purple">
+                            <h4>Varied Questions</h4>
+                            <p>43% of questions appear 1-6 times, showing diverse exam patterns.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
